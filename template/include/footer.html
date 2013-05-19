@@ -1,0 +1,17 @@
+{% if post and post.metadata.cover_link %}
+    {% set cover_link = post.metadata.cover_link %}
+{% elif site and site.configs.cover_link %}
+    {% set cover_link = site.configs.cover_link %}
+{% endif %}
+
+<footer id="footer" class="inner"><p>
+  	Copyright © 2013 - Rock -
+  	<span class="credit">Proudly Powered By <a target='_blank' href="http://www.farbox.com">FarBox.com</a> 
+    <br>
+            ~.^.~  <a href="/template">Clone Template</a>.-.<a href="/template-readme">Template Readme</a>  
+            .-.<a href="https://github.com/roccox/farbox_temp.git">Github</a>~.^.~
+	<br>
+	</span>
+	Design originally from: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+</footer>
+

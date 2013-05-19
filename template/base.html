@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>{% block title %}{{ site.configs.title }} {% endblock %}</title>
+
+
+    <!-- http://t.co/dKP3o1e -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel='alternate' type='application/rss+xml' title='atom 1.0' href='/feed' />
+    
+    <link href="/favicon.png" rel="shortcut icon">
+    <link href="/t/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <link href="/t/css/rock.css" rel="stylesheet" type="text/css">
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+    <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-col">
+            <div class="intrude-less">
+            <header id="header" class="inner">
+                <div class="profilepic">  
+                    <script src="/t/js/md5.js"></script>
+                    <script type="text/javascript">
+                    document.write("<img src='http://0.gravatar.com/avatar/" + MD5("roccox7@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;'");
+                    </script>
+                    </div>
+                <h1><a href="/">The Real</a></h1>
+                <p class="subtitle">Walk on the road</p>
+                <nav id="main-nav">
+                    <ul class="main-navigation">
+                        <li><a href="/">Home</a></li>
+                        {% if has('posts') %}
+                        <li><a href="/category">Category</a></li>
+                        <li><a href="/archive">Archive</a></li>
+                            {% if site.tags %}
+                            <li><a href="/tags">Tags</a></li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if has('images') and has('posts')%}
+                        <li><a href="/folder/">Photo</a></li>
+                        {% endif %}
+                        
+                        {% if has('links.md') %}
+                        <li><a href="/links.md">Links</a></li>
+                        {% endif %}
+
+                        {% if has('about.md') %}
+                        <li><a href="/about.md">About</a></li>
+                        {% endif %}
+
+
+                    </ul>
+                </nav>
+                <nav id="sub-nav">
+                <div class="social">
+                    <a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+                    <a class="github" href="https://github.com/roccox" title="GitHub">GitHub</a>
+                    <a class="rss" href="/feed" title="RSS">RSS</a>
+                </div>
+                </nav>
+
+                <br/>
+                <section>
+                    <h2>About Me</h2>
+                    <p>Rock，你可以在<a href="http://www.weibo.com/rock78" rel="_blank">微博</a>找到我。</p>
+                </section>
+
+                </br>
+                <section>
+                    <h2>Shameless Request</h2>
+                    <p>
+                        如果你觉得文章对您有帮助，并且希望使用DropBox的话，请通过我的
+                        <a href="http://db.tt/LeVm8Nh">Referral Link</a>
+                        注册Dropbox，不胜感激。
+                    </p>
+                </section>
+            </header>               
+            </div>
+        </div>  
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+<script src="/t/js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+    $('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'somethingreal';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30140802-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+</html>
+
+
